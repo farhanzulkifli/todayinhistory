@@ -7,8 +7,6 @@ const MyComponent = (props) => {
     text: {
         headline: "Hey",
         text: "How are you?!",
-      headline: "Cool F****n' S**t that happened on the day you were born",
-      text: "And now you wish you could crawl back into your mum's ***** and stay there!",
     },
     media: {
       url: "https://i.dailymail.co.uk/i/pix/2017/01/10/09/3C03E72D00000578-4104786-image-a-36_1484041024184.jpg",
