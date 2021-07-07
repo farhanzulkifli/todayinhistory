@@ -1,8 +1,7 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import MyComponent from "./Timeline";
 import { useHistory } from "react-router";
-
 
 const Events2 = () => {
   const params = useParams();
@@ -16,31 +15,48 @@ const Events2 = () => {
         setData(data.events);
       });
   }, [url]);
-  console.log("data",data)
-  const transform = (x) =>{
-    return {"start_date": {"year":x.year},"text":{"text":x.description},}
- }
- const transformeddata = []
- for (const item of data){
-  transformeddata.push(transform(item)) 
- }
- console.log("transformeddata",transformeddata)
- const homebutton = () => {history.push(`/`)}
-//  const content = data.map((content) => {
-//     return (
-//       <>
-//         <div>{content.year}</div>
-//         <div>{content.description}</div>
-//       </>
-//     );
-//   });
+
+  const transformeddata = [];
+  for (let [index, item] of data.entries()) {
+    const transform = (x) => {
+      const finalurl =
+        x?.wikipedia[0]?.wikipedia.substring(0, 8) +
+        "en." +
+        x?.wikipedia[0]?.wikipedia.substring(8, x?.wikipedia[0]?.wikipedia?.length);
+      return {
+  
+        start_date: { year: x.year.includes(" ") ? '-' +  x?.year.replace(/[ a-z]/ig, ''): x?.year
+        // start_date: { year: x.year.includes("BC") ? parseInt(x?.year.slice(0, -3))*-1 : x?.year
+      },
+        text: { headline: x?.wikipedia[0]?.title, text: x?.description },
+        media: { url: finalurl },
+        background: {
+          url: "https://picsum.photos/1280/1024?random=" + index + ".jpeg",
+        },
+      };
+    };
+    console.log()
+    transformeddata.push(transform(item));
+    console.log("item", item);
+  }
+  console.log("transformeddata", transformeddata);
+  const homebutton = () => {
+    history.push(`/`);
+  };
+  // const prevbutton = () => {
+  //   history.push(`/`);
+  // };
+  // const nextbutton = () => {
+  //   history.push(`/`);
+  // };
   return (
-  <div>
-    {/* {content} */}
-    <MyComponent data = {transformeddata}/>
-    <button onClick = {homebutton}>Home</button>
+    <div>
+      <MyComponent data={transformeddata} />
+      {/* <button onClick={prevbutton}>Prev</button> */}
+      <button onClick={homebutton}>Home</button>
+      {/* <button onClick={nextbutton}>Next</button> */}
     </div>
-  )
+  );
 };
 
 export default Events2;

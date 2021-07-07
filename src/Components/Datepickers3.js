@@ -36,14 +36,14 @@ export default function DatePickers3(props) {
         id="date"
         label="Birthday"
         type="date"
-        defaultValue=""
+        defaultValue="1994-07-29"
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
         }}
         onChange={handleextract}
       />
-      <button onClick={change}>LFG</button>
+      <button onClick={change} disabled = {!day} >LFG</button>
     </>
   );
 }
