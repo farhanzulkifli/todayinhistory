@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Timeline from "timelinejs-react";
 
 const MyComponent = (props) => {
@@ -6,6 +5,8 @@ const MyComponent = (props) => {
   console.log("events", events);
   const title = {
     text: {
+        headline: "Hey",
+        text: "How are you?!",
       headline: "Cool F****n' S**t that happened on the day you were born",
       text: "And now you wish you could crawl back into your mum's ***** and stay there!",
     },
@@ -14,7 +15,6 @@ const MyComponent = (props) => {
     },
     background: {
       url: "https://lp-cms-production.imgix.net/2021-04/500pxRF_14967543.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850",
-      color: "blue",
     },
   };
   const options = { font:"abril-droidsans", height: "100%", width: "100%" };
