@@ -18,17 +18,17 @@ const useStyles = makeStyles((theme) => ({
 export default function DatePickers3(props) {
   const [day, setDay] = useState(null);
   const [month, setMonth] = useState(null);
-  const [year, setYear] = useState(null);
+  // const [year, setYear] = useState(null);
   const history = useHistory();
 
   const handleextract = (event) => {
     const selectedDate = event.target.value;
     const selectedDay = new Date(selectedDate).getDate();
     const selectedMonth = new Date(selectedDate).getMonth() + 1;
-    const selectedYear = new Date(selectedDate).getFullYear()
+    // const selectedYear = new Date(selectedDate).getFullYear()
     setDay(selectedDay);
     setMonth(selectedMonth);
-    setYear(selectedYear)
+    // setYear(selectedYear)
 
   };
   const change = () => {history.push(`/${month}/${day}/events`)}
