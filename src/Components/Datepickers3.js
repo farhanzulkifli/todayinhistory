@@ -18,17 +18,23 @@ const useStyles = makeStyles((theme) => ({
 export default function DatePickers3(props) {
   const [day, setDay] = useState(null);
   const [month, setMonth] = useState(null);
+  const [year, setYear] = useState(null);
   const history = useHistory();
 
   const handleextract = (event) => {
     const selectedDate = event.target.value;
     const selectedDay = new Date(selectedDate).getDate();
     const selectedMonth = new Date(selectedDate).getMonth() + 1;
+    const selectedYear = new Date(selectedDate).getFullYear()
     setDay(selectedDay);
     setMonth(selectedMonth);
+    setYear(selectedYear)
+
   };
   const change = () => {history.push(`/${month}/${day}/events`)}
-
+  const changebirths = () => {history.push(`/${month}/${day}/births`)}
+  const changedeaths = () => {history.push(`/${month}/${day}/deaths`)}
+  
   const classes = useStyles();
   return (
     <>
@@ -36,14 +42,16 @@ export default function DatePickers3(props) {
         id="date"
         label="Birthday"
         type="date"
-        defaultValue="1994-07-29"
+        defaultValue=""
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
         }}
         onChange={handleextract}
       />
-      <button onClick={change} disabled = {!day} >LFG</button>
+      <button onClick={change} disabled = {!day} >Events</button>
+      <button onClick={changebirths} disabled = {!day} >Births</button>
+      <button onClick={changedeaths} disabled = {!day} >Deaths</button>
     </>
   );
 }

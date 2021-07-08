@@ -22,7 +22,7 @@ const MyComponent = (props) => {
   const title = {
     text: {
         headline: "Hey",
-        text: "Let me tell you some cool f**kin' s**t that happened on the day you wished you were never born",
+        text: "Let me tell you some cool f**kin' s**t that happened on the day you wished you were never born.",
     },
     media: {
       url: "https://source.unsplash.com/random",
@@ -30,13 +30,13 @@ const MyComponent = (props) => {
     background: {
       // url: "https://picsum.photos/1400/600.jpg",
       // url: photourl + accesskey
-      // url: factor.urls?.raw + ".jpeg"
+      // url: factor.urls?.thumbnail + ".jpeg"
       // url: "https://images.pexels.com/photos/2014422/pexels-photo-2014422"
       url: "https://picsum.photos/1280/1024.jpg"
     },
   };
-  const options = { font:"abril-droidsans", height: "100%", width: "100%" };
-  // console.log("props", props.data);
+  console.log("url", title.background.url); 
+  const options = {};
   const trial = (
     <Timeline
       target={<div className="timeline" style={{height: "800px", width:"100%"}}/>}
