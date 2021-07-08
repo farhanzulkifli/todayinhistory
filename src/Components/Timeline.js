@@ -39,7 +39,7 @@ const MyComponent = (props) => {
   const options = {};
   const trial = (
     <Timeline
-      target={<div className="timeline" style={{height: "800px", width:"100%"}}/>}
+      target={<div className="timeline" style={{height: "600px", width:"100%"}}/>}
       events={props.data}
       title={title} // optional
       options={options} // optional

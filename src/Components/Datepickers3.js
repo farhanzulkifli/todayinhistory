@@ -1,7 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
+import classNames from "classnames";
+import Font from "react-font";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -29,29 +31,59 @@ export default function DatePickers3(props) {
     setDay(selectedDay);
     setMonth(selectedMonth);
     // setYear(selectedYear)
-
   };
-  const change = () => {history.push(`/${month}/${day}/events`)}
-  const changebirths = () => {history.push(`/${month}/${day}/births`)}
-  const changedeaths = () => {history.push(`/${month}/${day}/deaths`)}
-  
+  const change = () => {
+    history.push(`/${month}/${day}/events`);
+  };
+  const changebirths = () => {
+    history.push(`/${month}/${day}/births`);
+  };
+  const changedeaths = () => {
+    history.push(`/${month}/${day}/deaths`);
+  };
   const classes = useStyles();
+  const classesbutton = classNames({
+    multibutton: true,
+    buttontry: true,
+  });
+
   return (
     <>
-      <TextField
-        id="date"
-        label="Birthday"
-        type="date"
-        defaultValue=""
-        className={classes.textField}
-        InputLabelProps={{
-          shrink: true,
-        }}
-        onChange={handleextract}
-      />
-      <button onClick={change} disabled = {!day} >Events</button>
-      <button onClick={changebirths} disabled = {!day} >Births</button>
-      <button onClick={changedeaths} disabled = {!day} >Deaths</button>
+      <Font family="Uchen">
+        <div className="displaytext">Hey, tell me your birthday?</div>
+      </Font>
+      <div className="calendar">
+        <TextField
+          id="date"
+          label="Birthday"
+          type="date"
+          defaultValue=""
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={handleextract}
+        />
+      </div>
+      <div className="multi-button">
+        <button className={classesbutton} onClick={change} disabled={!day}>
+          Events
+        </button>
+        <button
+          className={classesbutton}
+          onClick={changebirths}
+          disabled={!day}
+        >
+          Births
+        </button>
+        <button
+          className={classesbutton}
+          onClick={changedeaths}
+          disabled={!day}
+        >
+          Deaths
+        </button>
+      </div>
     </>
   );
 }

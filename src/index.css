@@ -11,3 +11,82 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.multi-button {
+  display: flex;
+  width: 900px;
+  padding: calc(var(--space) * 2);
+  box-shadow: var(--shadow) 4px 4px;
+  height: 40px;
+  margin: auto;
+  margin-top: 100px
+}
+.buttontry {
+  --border-size: 0.125rem;
+  --duration: 250ms;
+  --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --font-family: "Andale Mono", monospace;
+  --color-primary: white ;
+  --color-secondary:#FFA69E;
+  --color-tertiary: dodgerblue;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --space: 1rem;
+}
+
+.multi-button button {
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  padding: calc(var(--space) / 1.125) var(--space) var(--space);
+  border: var(--border-size) solid black;
+  color: black;
+  background-color: var(--color-primary);
+  font-size: 15px;
+  font-family: var(--font-family);
+  text-shadow: var(--shadow) 2px 2px;
+  transition: flex-grow var(--duration) var(--ease);
+
+}
+
+.multi-button button + button {
+  border-left: var(--border-size) solid black;
+  margin-left: calc(var(--border-size) * -1);
+}
+
+.multi-button button:hover,
+.multi-button button:focus {
+  flex-grow: 2;
+  color: black;
+  font-weight: bold;
+  outline: none;
+  text-shadow: none;
+  background-color: var(--color-secondary);
+}
+
+.multi-button button:focus {
+  outline: var(--border-size) dashed var(--color-primary);
+  outline-offset: calc(var(--border-size) * -3);
+}
+
+.multi-button:hover button:focus:not(:hover) {
+  flex-grow: 1;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  outline-color: var(--color-tertiary);
+}
+
+.multi-button button:active {
+  transform: translateY(var(--border-size));
+}
+.calendar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.displaytext{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 30px;
+}

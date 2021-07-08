@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import MyComponent from "./Timeline";
 import { useHistory } from "react-router";
+import Displaydate from "./Displaydate";
 
 const Deaths = () => {
   const params = useParams();
@@ -39,6 +40,7 @@ const Deaths = () => {
   };
   return (
     <div>
+        <Displaydate day ={params.day} month={params.month}/>
       <MyComponent data={transformeddata} />
       <button onClick={homebutton}>Home</button>
     </div>
