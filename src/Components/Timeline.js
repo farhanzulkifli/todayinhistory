@@ -21,8 +21,8 @@ const MyComponent = (props) => {
 
   const title = {
     text: {
-        headline: "Hey",
-        text: "Let me tell you some cool f**kin' s**t that happened on the day you wished you were never born.",
+        headline: "Story time!",
+        text: "Let me tell you some cool s**t that happened on the day you wished you were never born.",
     },
     media: {
       url: "https://source.unsplash.com/random",
