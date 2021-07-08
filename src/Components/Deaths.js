@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import MyComponent from "./Timeline";
 import { useHistory } from "react-router";
 import Displaydate from "./Displaydate";
+import { Helmet } from "react-helmet";
 
 const Deaths = () => {
   const params = useParams();
@@ -40,9 +41,14 @@ const Deaths = () => {
   };
   return (
     <div>
-        <Displaydate day ={params.day} month={params.month}/>
+      <Helmet>
+        <style>{"body { background-color: white; }"}</style>
+      </Helmet>
+      <Displaydate day={params.day} month={params.month} />
       <MyComponent data={transformeddata} />
-      <button onClick={homebutton}>Home</button>
+      <button className="custom-btn" onClick={homebutton}>
+        Home
+      </button>
     </div>
   );
 };

@@ -1,37 +1,18 @@
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import classNames from "classnames";
 import Font from "react-font";
-
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
-}));
+// import { format } from "date-fns";
+import { enGB } from "date-fns/locale";
+import { DatePickerCalendar } from "react-nice-dates";
+import "react-nice-dates/build/style.css";
 
 export default function DatePickers3(props) {
-  const [day, setDay] = useState(null);
-  const [month, setMonth] = useState(null);
-  // const [year, setYear] = useState(null);
+  const [date, setDate] = useState();
   const history = useHistory();
+  const day = new Date(date).getDate();
+  const month = new Date(date).getMonth();
 
-  const handleextract = (event) => {
-    const selectedDate = event.target.value;
-    const selectedDay = new Date(selectedDate).getDate();
-    const selectedMonth = new Date(selectedDate).getMonth() + 1;
-    // const selectedYear = new Date(selectedDate).getFullYear()
-    setDay(selectedDay);
-    setMonth(selectedMonth);
-    // setYear(selectedYear)
-  };
   const change = () => {
     history.push(`/${month}/${day}/events`);
   };
@@ -41,7 +22,6 @@ export default function DatePickers3(props) {
   const changedeaths = () => {
     history.push(`/${month}/${day}/deaths`);
   };
-  const classes = useStyles();
   const classesbutton = classNames({
     multibutton: true,
     buttontry: true,
@@ -49,22 +29,17 @@ export default function DatePickers3(props) {
 
   return (
     <>
-      <Font family="Uchen">
+      <Font family="Quattrocento">
         <div className="displaytext">Hey, tell me your birthday?</div>
+        <div className="displaytext4">I don't really wanna know your age tbh. So day and month is fine friend.</div>
       </Font>
-      <div className="calendar">
-        <TextField
-          id="date"
-          label="Birthday"
-          type="date"
-          defaultValue=""
-          className={classes.textField}
-          InputLabelProps={{
-            shrink: true,
-          }}
-          onChange={handleextract}
-        />
+      <div className="pickercalendar">
+        <DatePickerCalendar date={date} onDateChange={setDate} locale={enGB} />
       </div>
+      <Font family="Quattrocento">
+        <div className="displaytext3">Then, pick a category.</div>
+        <div className="displaytext4">Psssst. I like events the best.</div>
+      </Font>
       <div className="multi-button">
         <button className={classesbutton} onClick={change} disabled={!day}>
           Events

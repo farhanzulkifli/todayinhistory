@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FEFAE0;
 }
 
 code {
@@ -19,15 +20,15 @@ code {
   box-shadow: var(--shadow) 4px 4px;
   height: 40px;
   margin: auto;
-  margin-top: 100px
+  margin-top: 30px
 }
 .buttontry {
   --border-size: 0.125rem;
   --duration: 250ms;
   --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
   --font-family: "Andale Mono", monospace;
-  --color-primary: white ;
-  --color-secondary:#FFA69E;
+  /* --color-primary:; */
+  --color-secondary:#344620;
   --color-tertiary: dodgerblue;
   --shadow: rgba(0, 0, 0, 0.1);
   --space: 1rem;
@@ -42,8 +43,8 @@ code {
   color: black;
   background-color: var(--color-primary);
   font-size: 15px;
-  font-family: var(--font-family);
-  text-shadow: var(--shadow) 2px 2px;
+  font-family: Quattrocento;
+  /* text-shadow: var(--shadow) 2px 2px; */
   transition: flex-grow var(--duration) var(--ease);
 
 }
@@ -56,8 +57,8 @@ code {
 .multi-button button:hover,
 .multi-button button:focus {
   flex-grow: 2;
-  color: black;
-  font-weight: bold;
+  color: white;
+  /* font-weight: bold; */
   outline: none;
   text-shadow: none;
   background-color: var(--color-secondary);
@@ -78,15 +79,121 @@ code {
 .multi-button button:active {
   transform: translateY(var(--border-size));
 }
-.calendar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
 .displaytext{
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  margin-bottom: 10px;
+  font-size: 40px;
+  color: #283618;
+}
+.displaytext2{
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  font-size: 40px;
+  color: #283618;
+}
+.displaytext3{
+  display: flex;
+  justify-content: center;
   font-size: 30px;
+  margin-top: 40px;
+  color: #283618;
+}
+.displaytext4{
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: grey;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.custom-btn {
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  color: #000;
+  z-index: 2;
+  padding: 0;
+  justify-content: center;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: "Andale Mono", monospace;
+  background: #FEFAE0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.custom-btn:hover {
+  border: none;
+  font-weight: bold;
+  color:white
+}
+.custom-btn:before,
+.custom-btn:after {
+  background-color: #283618;
+    position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  border: 2px solid;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.custom-btn:before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #000;
+  border-left-color: #000;
+}
+.custom-btn:after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #000;
+  border-right-color: #000;
+  background-color: #606C38;
+}
+.custom-btn:hover:before,
+.custom-btn:hover:after {
+  border-color: #000;
+  height: 100%;
+  width: 100%;
+  
+}
+.nice-dates-navigation, .nice-dates-day {
+  color: #111;
+}
+.nice-dates-popover {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  max-width: 480px;
+  transition: none;
+}
+.pickercalendar{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.nice-dates-navigation{
+  width: 100px;
+}
+.nice-dates-week-header{
+  width: 400px;
+}
+.nice-dates-grid{
+  height: 400px;
+}
+.loadingtext{
+margin: 0 auto
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Font from "react-font";
 
 const Displaydate = (props) => {
   const [month, setMonth] = useState("");
@@ -44,12 +45,11 @@ console.log("props",props.month)
 console.log("haha",month)
 console.log(props.day)
   return (
-    <div>
-      <h2>
-        {props.day}
-        {month}
-      </h2>
+    <Font family="Quattrocento">
+    <div className = "displaytext2">
+        {props.day} {month}
     </div>
+    </Font>
   );
 };
 
