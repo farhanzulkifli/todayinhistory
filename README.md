@@ -1,0 +1,6 @@
+![alt text](https://github.com/farhanzulkifli/todayinhistory/blob/main/src/Readmepictures/Slide1.JPG?raw=true)
+![alt text](https://github.com/farhanzulkifli/todayinhistory/blob/main/src/Readmepictures/Slide2.JPG?raw=true)
+![alt text](https://github.com/farhanzulkifli/todayinhistory/blob/main/src/Readmepictures/Slide3.JPG?raw=true)
+![alt text](https://github.com/farhanzulkifli/todayinhistory/blob/main/src/Readmepictures/Slide4.JPG?raw=true)
+![alt text](https://github.com/farhanzulkifli/todayinhistory/blob/main/src/Readmepictures/Slide5.JPG?raw=true)
+![alt text](https://github.com/farhanzulkifli/todayinhistory/blob/main/src/Readmepictures/Slide6.JPG?raw=true)
