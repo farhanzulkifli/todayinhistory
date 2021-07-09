@@ -11,7 +11,7 @@ export default function DatePickers3(props) {
   const [date, setDate] = useState();
   const history = useHistory();
   const day = new Date(date).getDate();
-  const month = new Date(date).getMonth();
+  const month = new Date(date).getMonth()+1;
 
   const change = () => {
     history.push(`/${month}/${day}/events`);
